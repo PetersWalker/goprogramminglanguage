@@ -1,11 +1,11 @@
-package main
+package echo
 
 import (
   "fmt"
   "os"
 )
 
-func main() {
+func echo2() {
   var s, sep string
   for _ , arg := range os.Args[1:] {
     s += sep + arg

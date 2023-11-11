@@ -1,4 +1,4 @@
-package main
+package echo
 
 import (
   "os"
@@ -6,7 +6,7 @@ import (
   "strings"
 )
 
-func main() {
+func echo3() {
   fmt.Println(strings.Join(os.Args[1:], " "))
   fmt.Println("------print the index and value once per line------")
   for i, arg:= range os.Args[1:] {
