@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-  fmt.Println("Hello ∑ø®¬d")
+	fmt.Println("Hello ∑ø®¬d")
 }

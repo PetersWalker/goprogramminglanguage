@@ -3,16 +3,16 @@
 package main
 
 import (
-	"os"
-	"fmt"
 	"bufio"
+	"fmt"
+	"os"
 )
 
 func main() {
 	counts := make(map[string]int)
 	files := os.Args[1:]
-	fileNames := make(map[string][]string)	
-	
+	fileNames := make(map[string][]string)
+
 	if len(files) == 0 {
 		countLines(os.Stdin, counts, fileNames)
 	} else {
@@ -27,7 +27,7 @@ func main() {
 			f.Close()
 		}
 	}
-	
+
 	fmt.Println("dups\tline\tfiles")
 	for line, n := range counts {
 		if n > 1 {
@@ -43,15 +43,13 @@ func main() {
 	}
 }
 
-
-
-func countLines (f *os.File, counts map[string]int, fileNames map[string][]string) {
+func countLines(f *os.File, counts map[string]int, fileNames map[string][]string) {
 	input := bufio.NewScanner(f)
 	for input.Scan() {
-		counts[input.Text()]++		
+		counts[input.Text()]++
 
 		if notIn(f.Name(), fileNames[input.Text()]) {
- 			fileNames[input.Text()] = append(fileNames[input.Text()], f.Name())
+			fileNames[input.Text()] = append(fileNames[input.Text()], f.Name())
 		}
 	}
 }

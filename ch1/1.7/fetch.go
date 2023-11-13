@@ -17,7 +17,7 @@ func main() {
 			fmt.Fprintf(os.Stderr, "fetch: %v\n", err)
 			os.Exit(1)
 		}
-		
+
 		_, e := io.Copy(os.Stdout, resp.Body)
 		resp.Body.Close()
 		if err != nil {

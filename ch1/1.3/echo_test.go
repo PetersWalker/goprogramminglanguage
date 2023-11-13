@@ -4,33 +4,33 @@
 package echo_test
 
 import (
-  "testing"
-  "os/exec"
+	"os/exec"
+	"testing"
 )
 
 func BenchmarkEcho1(b *testing.B) {
-  cmd := exec.Command("go run ./ch1/echo/echo1.go", "hello world hello world hello world hello world hello world")
+	cmd := exec.Command("go run ./ch1/echo/echo1.go", "hello world hello world hello world hello world hello world")
 
-  for i := 0; i < b.N; i++ {
-    cmd.Output()
+	for i := 0; i < b.N; i++ {
+		cmd.Output()
 
-  }
+	}
 }
 
 func BenchmarkEcho2(b *testing.B) {
-  cmd := exec.Command("go run ./ch1/echo/echo2.go", "hello world hello world hello world hello world hello world")
+	cmd := exec.Command("go run ./ch1/echo/echo2.go", "hello world hello world hello world hello world hello world")
 
-  for i := 0; i < b.N; i++ {
-    cmd.Output()
+	for i := 0; i < b.N; i++ {
+		cmd.Output()
 
-  }
+	}
 }
 
 func BenchmarkEcho3(b *testing.B) {
-  cmd := exec.Command("go run ./ch1/echo/echo3.go", "hello world hello world hello world hello world hello world")
+	cmd := exec.Command("go run ./ch1/echo/echo3.go", "hello world hello world hello world hello world hello world")
 
-  for i := 0; i < b.N; i++ {
-    cmd.Output()
+	for i := 0; i < b.N; i++ {
+		cmd.Output()
 
-  }
+	}
 }

@@ -32,9 +32,9 @@ func lissajous(out io.Writer) {
 
 	var continuousPalette [][]color.Color
 	// generate continutes palette
-	for i := 0 ; i<=255; i++ {		
+	for i := 0; i <= 255; i++ {
 		// randColor:=rand.Int()
-		continuousPalette = append(continuousPalette, []color.Color{color.RGBA{uint8(i*2), uint8(i) , uint8(i*4), 255}, color.White})
+		continuousPalette = append(continuousPalette, []color.Color{color.RGBA{uint8(i * 2), uint8(i), uint8(i * 4), 255}, color.White})
 	}
 	freq := rand.Float64() * 3.0 // relative frequency of y oscillator
 	anim := gif.GIF{LoopCount: nframes}
@@ -59,9 +59,9 @@ func lissajous(out io.Writer) {
 }
 
 func nextColorIndex(colorIndex uint8) uint8 {
-	if (colorIndex == 254){
+	if colorIndex == 254 {
 		return 0
 	}
-	
+
 	return colorIndex + 1
 }
